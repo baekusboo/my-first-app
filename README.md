@@ -3,6 +3,7 @@ Sign up, Login, Profile pages app - MERN stack project
 This project is made using React js, node js, express and mongo db.
 The frontend files are inside src folder.
 The backend files are inside signupbackend folder.
+
 To run this project successfully, follow these steps:-
 1. Create a '.env' file inside 'signupbackend' folder with the following variables below:
 
