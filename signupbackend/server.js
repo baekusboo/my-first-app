@@ -22,8 +22,4 @@ app.use('/app/login', loginRoute);
 app.use('/app/signup', signupRoute);
 app.use('/app/profile', profileRoute);
 
-app.get('/app',(req,res) => {
-    res.send('hello world from express!');
-})
-
 app.listen(4000, ()=> console.log("Server is up and running."))

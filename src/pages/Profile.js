@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import differenceInYears from 'date-fns/differenceInYears';
+
 
 import { StyledFormArea, StyledFormButton, StyledTitle, StyledSubTitle, ButtonGroup, ExtraText, TextLink, CopyrightText, colors} from '../components/Styles';
 
@@ -26,8 +28,10 @@ const Profile = () => {
                 }}
                 validationSchema = {
                     Yup.object({
-                        age: Yup.number().required("Required"),
-                        dob: Yup.date().required("Required."),
+                        age: Yup.number().required("Required").min(18, "You must be at least 18 years."),
+                        dob: Yup.date().required("Required.").test('DOB', 'You must be at least 18 years.', value => {
+                            return differenceInYears(new Date(), new Date(value)) >= 18;
+                          }),
                         mobile: Yup.string().max(10,"Mobile number too long.").matches(mobileExp, 'Mobile number is not valid').required("Required."),
                         country: Yup.string().required("Required."),
                     })
@@ -48,18 +52,14 @@ const Profile = () => {
                       ).catch((error)=>{
                         if(error && error.response){ console.log("Access Denied; Error = ",error.message)}
                      });
-/*
-                    const result = await axios.post("http://localhost:4000/app/profile", values, token).catch((error) => {
-                       if (error && error.response)
-                        {
-                            console.log("Error: ",error.message);
-                            //alert("Error");
-                        }
-                    });
-*/
+
                     if (result && result.data){
-                        //console.log("Data = ",result.data);
+                        console.log("Data = ",result.data);
                         alert("Profile Update Successful!");
+                        //localStorage.removeItem('token');
+                    }
+                    else{
+                        alert("Access Denied!");
                     }
                     
                     setSubmitting(false);

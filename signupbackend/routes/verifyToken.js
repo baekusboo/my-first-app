@@ -10,7 +10,7 @@ module.exports = function (request, response, next){
     try{
         const verified = jwt.verify(token, process.env.JWT_SECRET);
         request.User = verified;
-        //console.log("logged-in as = ",request.body.email)
+        console.log("logged-in as = ",request.User.email)
         next();
     }catch(error){
         response.status(400).send('Invalid Token');

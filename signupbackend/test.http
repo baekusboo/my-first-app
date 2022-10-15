@@ -1,11 +1,11 @@
-POST http://localhost:4000/app/profile
+POST http://localhost:4000/app/signup
 Content-Type: application/json
-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE3ODU5YTU3ZWNlNTRkYjUyZGM5ODciLCJlbWFpbCI6ImFkbWluQG1haWwuaW4iLCJpYXQiOjE2NjI0OTM3OTF9.uLyuItyN6r9k3xOS8tif4SjfGR9AFvesYQ4UlisBpqM
+//auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE3ODU5YTU3ZWNlNTRkYjUyZGM5ODciLCJlbWFpbCI6ImFkbWluQG1haWwuaW4iLCJpYXQiOjE2NjI0OTM3OTF9.uLyuItyN6r9k3xOS8tif4SjfGR9AFvesYQ4UlisBpqM
 
 {
-    //"name":"test1",
-    //"email":"test1@mail.in",
-    //"password":"test1test1"
+    "name":"helloworld",
+    "email":"helloworld@mail.com",
+    "password":"helloworld@mail.com"
     //"age":"50",
     //"dob":"Tue, 06 Sep 2022 13:59:23 GMT",
     //"mobile":"9987654321",

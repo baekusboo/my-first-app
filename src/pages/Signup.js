@@ -34,14 +34,15 @@ const Signup = () => {
                     console.log(values);
 
                     const {repeatPassword, ...data} = values;
-                    const response = await axios.post("http://localhost:4000/app/signup", data).catch((error) => {
+                    const result = await axios.post("http://localhost:4000/app/signup", data).catch((error) => {
                         if (error && error.response)
                         console.log("Error: ",error);
                     });
 
-                    if (response && response.data){
+                    if (result && result.data){
                         alert("Registration Successful!");
-                        window.location = '/login';
+                        console.log("Data: ",result.data);
+                        //window.location = '/login';
                     }
 
                     setSubmitting(false);

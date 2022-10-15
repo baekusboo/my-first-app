@@ -20,7 +20,7 @@ router.post('/', async (request,response) =>{
         const token = jwt.sign({
             _id: User._id,
             email: User.email
-        }, process.env.JWT_SECRET)
+        }, process.env.JWT_SECRET,{expiresIn: '10m'})
 
         return response.header('auth-token',token).json({
             status: 'ok',
