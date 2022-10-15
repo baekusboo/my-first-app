@@ -10,9 +10,9 @@ To run this project successfully, follow these steps:-
 DATABASE_ACCESS = "mongodb+srv://<username>:<password>@cluster0.ywtddvn.mongodb.net/<tablename>?retryWrites=true&w=majority"
 JWT_SECRET = 'dghafvjdusmyhgsdhbgfiudykhg'
 
-2. The DATABASE_ACCESS should contain the link to your mongodb credentials(username / password) and table name. The JWT_SECRET has some random secret for authentication purposes.
+2. The DATABASE_ACCESS should contain the link to your mongodb credentials(username / password) and table name. The JWT_SECRET has some random secret for the authentication purposes.
 3. Save the files.
-4. Run the backend server with 'npm start' command from 'signupbackend folder.
+4. Run the backend server with 'npm start' command from signupbackend folder.
 5. Run the frontend server with 'npm start' command from the project folder.
 6. The project runs on http://localhost:3000/ in your browser.
 
